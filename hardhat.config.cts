@@ -26,7 +26,9 @@ const config = {
     },
     // Add dependency contracts to use that aren't imported (like Safe or AAVE pools for example)
     dependencyCompiler: {
-        paths: [],
+        paths: [
+            "@arbitrum/nitro-contracts/src/node-interface/NodeInterface.sol",
+        ],
     },
     // Use develop network to connect any EVM compatible network (for any chainIds)
     networks: {

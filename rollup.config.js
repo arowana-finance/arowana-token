@@ -9,9 +9,10 @@ const config = [
         input: './src/index.ts',
         browserName: 'arwToken',
         globals: {
-            ethers: 'ethers'
+            ethers: 'ethers',
+            'ethers-opt': 'ethersOpt',
         },
-        external: ['crypto', 'ethers'],
+        external: ['crypto', 'ethers', 'ethers-opt'],
     }),
 ]
 

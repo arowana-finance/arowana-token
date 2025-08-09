@@ -40,7 +40,7 @@ contract ArbGatewaySettle is ArbGateway {
         uint256 value,
         bytes memory data,
         uint256 _nonce
-    ) public payable virtual override {
+    ) public payable virtual override onlyArb {
         value = convertAmount(value, tokenDecimals, IERC20Exp(token).decimals());
 
         orders[_nonce] = BridgeOrder({

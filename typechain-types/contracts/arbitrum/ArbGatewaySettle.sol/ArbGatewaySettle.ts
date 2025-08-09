@@ -41,6 +41,7 @@ export interface ArbGatewaySettleInterface extends Interface {
       | "bridgeMsg"
       | "bridgeTo"
       | "bridgeToPermit"
+      | "checkArb"
       | "convertAmount"
       | "inbox"
       | "initializeGateway"
@@ -121,6 +122,10 @@ export interface ArbGatewaySettleInterface extends Interface {
     ],
   ): string;
   encodeFunctionData(
+    functionFragment: "checkArb",
+    values: [AddressLike],
+  ): string;
+  encodeFunctionData(
     functionFragment: "convertAmount",
     values: [BigNumberish, BigNumberish, BigNumberish],
   ): string;
@@ -196,6 +201,7 @@ export interface ArbGatewaySettleInterface extends Interface {
     functionFragment: "bridgeToPermit",
     data: BytesLike,
   ): Result;
+  decodeFunctionResult(functionFragment: "checkArb", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "convertAmount",
     data: BytesLike,
@@ -532,6 +538,8 @@ export interface ArbGatewaySettle extends BaseContract {
     "payable"
   >;
 
+  checkArb: TypedContractMethod<[msgSender: AddressLike], [boolean], "view">;
+
   convertAmount: TypedContractMethod<
     [
       fromValue: BigNumberish,
@@ -684,6 +692,9 @@ export interface ArbGatewaySettle extends BaseContract {
     [bigint],
     "payable"
   >;
+  getFunction(
+    nameOrSignature: "checkArb",
+  ): TypedContractMethod<[msgSender: AddressLike], [boolean], "view">;
   getFunction(
     nameOrSignature: "convertAmount",
   ): TypedContractMethod<

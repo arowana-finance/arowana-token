@@ -57,6 +57,11 @@ contract ArbGateway is Initializable, OwnableUpgradeable {
 
     uint256 public nonce;
 
+    modifier onlyArb() {
+        require(checkArb(msg.sender) || msg.sender == owner(), 'NOT_ARBITRUM');
+        _;
+    }
+
     struct OtherTokens {
         address home;
         address other;
@@ -80,6 +85,21 @@ contract ArbGateway is Initializable, OwnableUpgradeable {
 
             otherTokens[otherToken.home] = otherToken.other;
             emit SetOtherToken(otherToken.home, otherToken.other);
+        }
+    }
+
+    function checkArb(address msgSender) public view returns (bool) {
+        bool isArbitrum = address(inbox) == address(0);
+
+        if (isArbitrum) {
+            // To check that message came from the parent chain,
+            // we check that the sender is the parent chain contract's alias.
+            return msgSender == AddressAliasHelper.applyL1ToL2Alias(otherGateway);
+        } else {
+            // this prevents reentrancies on Child-to-Parent transactions
+            IBridge bridge = inbox.bridge();
+            return
+                msgSender == address(bridge) && IOutbox(bridge.activeOutbox()).l2ToL1Sender() == otherGateway;
         }
     }
 
@@ -189,7 +209,7 @@ contract ArbGateway is Initializable, OwnableUpgradeable {
         uint256 value,
         bytes memory data,
         uint256 _nonce
-    ) public payable virtual {
+    ) public payable virtual onlyArb {
         value = convertAmount(value, tokenDecimals, IERC20Exp(token).decimals());
 
         _bridgeFrom(token, from, to, value, data, _nonce);
@@ -203,19 +223,6 @@ contract ArbGateway is Initializable, OwnableUpgradeable {
         bytes memory data,
         uint256 _nonce
     ) internal virtual {
-        bool isArbitrum = address(inbox) == address(0);
-
-        if (isArbitrum) {
-            // To check that message came from the parent chain,
-            // we check that the sender is the parent chain contract's alias.
-            require(msg.sender == AddressAliasHelper.applyL1ToL2Alias(otherGateway), 'NOT_GATEWAY');
-        } else {
-            IBridge bridge = inbox.bridge();
-            // this prevents reentrancies on Child-to-Parent transactions
-            require(msg.sender == address(bridge), 'NOT_BRIDGE');
-            require(IOutbox(bridge.activeOutbox()).l2ToL1Sender() == otherGateway, 'NOT_GATEWAY');
-        }
-
         IERC20Mintable _token = IERC20Mintable(token);
 
         // If the bridge has sufficient balance send it instead

@@ -2197,7 +2197,7 @@ export type DelayProofStruct = {
 	beforeDelayedAcc: BytesLike;
 	delayedMessage: Messages.MessageStruct;
 };
-export declare namespace ISequencerInbox {
+declare namespace ISequencerInbox {
 	type MaxTimeVariationStruct = {
 		delayBlocks: BigNumberish;
 		futureBlocks: BigNumberish;
@@ -6537,7 +6537,7 @@ interface Lock$1 extends BaseContract {
 		Withdrawal: TypedContractEvent<WithdrawalEvent.InputTuple, WithdrawalEvent.OutputTuple, WithdrawalEvent.OutputObject>;
 	};
 }
-export declare namespace ArbGateway {
+declare namespace ArbGateway {
 	type OtherTokensStruct = {
 		home: AddressLike;
 		other: AddressLike;
@@ -9952,7 +9952,7 @@ export interface ERC20Mock extends BaseContract {
 		Transfer: TypedContractEvent<TransferEvent$9.InputTuple, TransferEvent$9.OutputTuple, TransferEvent$9.OutputObject>;
 	};
 }
-export declare class AbsOutbox__factory {
+declare class AbsOutbox__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -10556,7 +10556,7 @@ export declare class AbsOutbox__factory {
 	static createInterface(): AbsOutboxInterface;
 	static connect(address: string, runner?: ContractRunner | null): AbsOutbox;
 }
-export declare class IBridge__factory {
+declare class IBridge__factory {
 	static readonly abi: readonly [
 		{
 			readonly anonymous: false;
@@ -11083,7 +11083,7 @@ export declare class IBridge__factory {
 	static createInterface(): IBridgeInterface;
 	static connect(address: string, runner?: ContractRunner | null): IBridge;
 }
-export declare class IDelayedMessageProvider__factory {
+declare class IDelayedMessageProvider__factory {
 	static readonly abi: readonly [
 		{
 			readonly anonymous: false;
@@ -11121,7 +11121,7 @@ export declare class IDelayedMessageProvider__factory {
 	static createInterface(): IDelayedMessageProviderInterface;
 	static connect(address: string, runner?: ContractRunner | null): IDelayedMessageProvider;
 }
-export declare class IInbox__factory {
+declare class IInbox__factory {
 	static readonly abi: readonly [
 		{
 			readonly anonymous: false;
@@ -11794,7 +11794,7 @@ export declare class IInbox__factory {
 	static createInterface(): IInboxInterface;
 	static connect(address: string, runner?: ContractRunner | null): IInbox;
 }
-export declare class IInboxBase__factory {
+declare class IInboxBase__factory {
 	static readonly abi: readonly [
 		{
 			readonly anonymous: false;
@@ -12136,7 +12136,7 @@ export declare class IInboxBase__factory {
 	static createInterface(): IInboxBaseInterface;
 	static connect(address: string, runner?: ContractRunner | null): IInboxBase;
 }
-export declare class IOutbox__factory {
+declare class IOutbox__factory {
 	static readonly abi: readonly [
 		{
 			readonly anonymous: false;
@@ -12593,7 +12593,7 @@ export declare class IOutbox__factory {
 	static createInterface(): IOutboxInterface;
 	static connect(address: string, runner?: ContractRunner | null): IOutbox;
 }
-export declare class IOwnable__factory {
+declare class IOwnable__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -12613,7 +12613,7 @@ export declare class IOwnable__factory {
 	static createInterface(): IOwnableInterface;
 	static connect(address: string, runner?: ContractRunner | null): IOwnable;
 }
-export declare class IFeeTokenPricer__factory {
+declare class IFeeTokenPricer__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -12633,7 +12633,7 @@ export declare class IFeeTokenPricer__factory {
 	static createInterface(): IFeeTokenPricerInterface;
 	static connect(address: string, runner?: ContractRunner | null): IFeeTokenPricer;
 }
-export declare class ISequencerInbox__factory {
+declare class ISequencerInbox__factory {
 	static readonly abi: readonly [
 		{
 			readonly anonymous: false;
@@ -13985,7 +13985,7 @@ export declare class ISequencerInbox__factory {
 export type OutboxConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class Outbox__factory extends ContractFactory {
+declare class Outbox__factory extends ContractFactory {
 	constructor(...args: OutboxConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -14600,7 +14600,7 @@ export declare class Outbox__factory extends ContractFactory {
 	static createInterface(): OutboxInterface;
 	static connect(address: string, runner?: ContractRunner | null): Outbox;
 }
-export declare class IGasRefunder__factory {
+declare class IGasRefunder__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -14635,7 +14635,7 @@ export declare class IGasRefunder__factory {
 	static createInterface(): IGasRefunderInterface;
 	static connect(address: string, runner?: ContractRunner | null): IGasRefunder;
 }
-export declare class NodeInterface__factory {
+declare class NodeInterface__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -14961,7 +14961,7 @@ export declare class NodeInterface__factory {
 	static createInterface(): NodeInterfaceInterface;
 	static connect(address: string, runner?: ContractRunner | null): NodeInterface;
 }
-export declare class ArbSys__factory {
+declare class ArbSys__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -15344,7 +15344,7 @@ export declare class ArbSys__factory {
 	static createInterface(): ArbSysInterface;
 	static connect(address: string, runner?: ContractRunner | null): ArbSys;
 }
-export declare class Ownable__factory {
+declare class Ownable__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -15428,7 +15428,7 @@ export declare class Ownable__factory {
 	static createInterface(): OwnableInterface;
 	static connect(address: string, runner?: ContractRunner | null): Ownable;
 }
-export declare class IERC1363__factory {
+declare class IERC1363__factory {
 	static readonly abi: readonly [
 		{
 			readonly anonymous: false;
@@ -15806,7 +15806,7 @@ export declare class IERC1363__factory {
 	static createInterface(): IERC1363Interface;
 	static connect(address: string, runner?: ContractRunner | null): IERC1363;
 }
-export declare class IERC1967__factory {
+declare class IERC1967__factory {
 	static readonly abi: readonly [
 		{
 			readonly anonymous: false;
@@ -15857,7 +15857,7 @@ export declare class IERC1967__factory {
 	static createInterface(): IERC1967Interface;
 	static connect(address: string, runner?: ContractRunner | null): IERC1967;
 }
-export declare class IERC5267__factory {
+declare class IERC5267__factory {
 	static readonly abi: readonly [
 		{
 			readonly anonymous: false;
@@ -15914,7 +15914,7 @@ export declare class IERC5267__factory {
 	static createInterface(): IERC5267Interface;
 	static connect(address: string, runner?: ContractRunner | null): IERC5267;
 }
-export declare class IERC1155Errors__factory {
+declare class IERC1155Errors__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -16022,7 +16022,7 @@ export declare class IERC1155Errors__factory {
 	static createInterface(): IERC1155ErrorsInterface;
 	static connect(address: string, runner?: ContractRunner | null): IERC1155Errors;
 }
-export declare class IERC20Errors__factory {
+declare class IERC20Errors__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -16114,7 +16114,7 @@ export declare class IERC20Errors__factory {
 	static createInterface(): IERC20ErrorsInterface;
 	static connect(address: string, runner?: ContractRunner | null): IERC20Errors;
 }
-export declare class IERC721Errors__factory {
+declare class IERC721Errors__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -16226,7 +16226,7 @@ export declare class IERC721Errors__factory {
 export type ERC1967UtilsConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class ERC1967Utils__factory extends ContractFactory {
+declare class ERC1967Utils__factory extends ContractFactory {
 	constructor(...args: ERC1967UtilsConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -16282,7 +16282,7 @@ export declare class ERC1967Utils__factory extends ContractFactory {
 	static createInterface(): ERC1967UtilsInterface;
 	static connect(address: string, runner?: ContractRunner | null): ERC1967Utils;
 }
-export declare class Proxy__factory {
+declare class Proxy__factory {
 	static readonly abi: readonly [
 		{
 			readonly stateMutability: "payable";
@@ -16292,7 +16292,7 @@ export declare class Proxy__factory {
 	static createInterface(): ProxyInterface;
 	static connect(address: string, runner?: ContractRunner | null): Proxy$1;
 }
-export declare class IBeacon__factory {
+declare class IBeacon__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -16312,7 +16312,7 @@ export declare class IBeacon__factory {
 	static createInterface(): IBeaconInterface;
 	static connect(address: string, runner?: ContractRunner | null): IBeacon;
 }
-export declare class ERC20__factory {
+declare class ERC20__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -16630,7 +16630,7 @@ export declare class ERC20__factory {
 	static createInterface(): ERC20Interface;
 	static connect(address: string, runner?: ContractRunner | null): ERC20;
 }
-export declare class IERC20__factory {
+declare class IERC20__factory {
 	static readonly abi: readonly [
 		{
 			readonly anonymous: false;
@@ -16820,7 +16820,7 @@ export declare class IERC20__factory {
 	static createInterface(): IERC20Interface;
 	static connect(address: string, runner?: ContractRunner | null): IERC20;
 }
-export declare class ERC20Burnable__factory {
+declare class ERC20Burnable__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -17171,7 +17171,7 @@ export declare class ERC20Burnable__factory {
 	static createInterface(): ERC20BurnableInterface;
 	static connect(address: string, runner?: ContractRunner | null): ERC20Burnable;
 }
-export declare class ERC20Permit__factory {
+declare class ERC20Permit__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -17705,7 +17705,7 @@ export declare class ERC20Permit__factory {
 	static createInterface(): ERC20PermitInterface;
 	static connect(address: string, runner?: ContractRunner | null): ERC20Permit;
 }
-export declare class IERC20Metadata__factory {
+declare class IERC20Metadata__factory {
 	static readonly abi: readonly [
 		{
 			readonly anonymous: false;
@@ -17937,7 +17937,7 @@ export declare class IERC20Metadata__factory {
 	static createInterface(): IERC20MetadataInterface;
 	static connect(address: string, runner?: ContractRunner | null): IERC20Metadata;
 }
-export declare class IERC20Permit__factory {
+declare class IERC20Permit__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -18023,7 +18023,7 @@ export declare class IERC20Permit__factory {
 export type SafeERC20ConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class SafeERC20__factory extends ContractFactory {
+declare class SafeERC20__factory extends ContractFactory {
 	constructor(...args: SafeERC20ConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -18075,7 +18075,7 @@ export declare class SafeERC20__factory extends ContractFactory {
 export type AddressConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class Address__factory extends ContractFactory {
+declare class Address__factory extends ContractFactory {
 	constructor(...args: AddressConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -18106,7 +18106,7 @@ export declare class Address__factory extends ContractFactory {
 export type ErrorsConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class Errors__factory extends ContractFactory {
+declare class Errors__factory extends ContractFactory {
 	constructor(...args: ErrorsConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -18162,7 +18162,7 @@ export declare class Errors__factory extends ContractFactory {
 	static createInterface(): ErrorsInterface;
 	static connect(address: string, runner?: ContractRunner | null): Errors;
 }
-export declare class Nonces__factory {
+declare class Nonces__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -18206,7 +18206,7 @@ export declare class Nonces__factory {
 export type ShortStringsConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class ShortStrings__factory extends ContractFactory {
+declare class ShortStrings__factory extends ContractFactory {
 	constructor(...args: ShortStringsConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -18243,7 +18243,7 @@ export declare class ShortStrings__factory extends ContractFactory {
 export type StringsConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class Strings__factory extends ContractFactory {
+declare class Strings__factory extends ContractFactory {
 	constructor(...args: StringsConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -18291,7 +18291,7 @@ export declare class Strings__factory extends ContractFactory {
 export type ECDSAConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class ECDSA__factory extends ContractFactory {
+declare class ECDSA__factory extends ContractFactory {
 	constructor(...args: ECDSAConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -18336,7 +18336,7 @@ export declare class ECDSA__factory extends ContractFactory {
 	static createInterface(): ECDSAInterface;
 	static connect(address: string, runner?: ContractRunner | null): ECDSA;
 }
-export declare class EIP712__factory {
+declare class EIP712__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -18410,7 +18410,7 @@ export declare class EIP712__factory {
 	static createInterface(): EIP712Interface;
 	static connect(address: string, runner?: ContractRunner | null): EIP712;
 }
-export declare class IERC165__factory {
+declare class IERC165__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -18438,7 +18438,7 @@ export declare class IERC165__factory {
 export type SafeCastConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class SafeCast__factory extends ContractFactory {
+declare class SafeCast__factory extends ContractFactory {
 	constructor(...args: SafeCastConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -18509,7 +18509,7 @@ export declare class SafeCast__factory extends ContractFactory {
 	static createInterface(): SafeCastInterface;
 	static connect(address: string, runner?: ContractRunner | null): SafeCast;
 }
-export declare class OwnableUpgradeable__factory {
+declare class OwnableUpgradeable__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -18618,7 +18618,7 @@ export declare class OwnableUpgradeable__factory {
 	static createInterface(): OwnableUpgradeableInterface;
 	static connect(address: string, runner?: ContractRunner | null): OwnableUpgradeable;
 }
-export declare class Initializable__factory {
+declare class Initializable__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -18649,7 +18649,7 @@ export declare class Initializable__factory {
 	static createInterface(): InitializableInterface;
 	static connect(address: string, runner?: ContractRunner | null): Initializable;
 }
-export declare class ContextUpgradeable__factory {
+declare class ContextUpgradeable__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -18683,7 +18683,7 @@ export declare class ContextUpgradeable__factory {
 export type LockConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class Lock__factory extends ContractFactory {
+declare class Lock__factory extends ContractFactory {
 	constructor(...args: LockConstructorParams);
 	getDeployTransaction(_unlockTime: BigNumberish, overrides?: PayableOverrides & {
 		from?: string;
@@ -18770,7 +18770,7 @@ export declare class Lock__factory extends ContractFactory {
 export type ArbGatewayConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class ArbGateway__factory extends ContractFactory {
+declare class ArbGateway__factory extends ContractFactory {
 	constructor(...args: ArbGatewayConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -19477,7 +19477,7 @@ export declare class ArbGateway__factory extends ContractFactory {
 export type ArbGatewaySettleConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class ArbGatewaySettle__factory extends ContractFactory {
+declare class ArbGatewaySettle__factory extends ContractFactory {
 	constructor(...args: ArbGatewaySettleConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -20324,7 +20324,7 @@ export declare class ArbGatewaySettle__factory extends ContractFactory {
 export type GreeterConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class Greeter__factory extends ContractFactory {
+declare class Greeter__factory extends ContractFactory {
 	constructor(...args: GreeterConstructorParams);
 	getDeployTransaction(_greeting: string, overrides?: NonPayableOverrides & {
 		from?: string;
@@ -20396,7 +20396,7 @@ export declare class Greeter__factory extends ContractFactory {
 export type GreeterChildConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class GreeterChild__factory extends ContractFactory {
+declare class GreeterChild__factory extends ContractFactory {
 	constructor(...args: GreeterChildConstructorParams);
 	getDeployTransaction(_greeting: string, _parentTarget: AddressLike, overrides?: NonPayableOverrides & {
 		from?: string;
@@ -20533,7 +20533,7 @@ export declare class GreeterChild__factory extends ContractFactory {
 export type GreeterParentConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class GreeterParent__factory extends ContractFactory {
+declare class GreeterParent__factory extends ContractFactory {
 	constructor(...args: GreeterParentConstructorParams);
 	getDeployTransaction(_greeting: string, _childTarget: AddressLike, _inbox: AddressLike, overrides?: NonPayableOverrides & {
 		from?: string;
@@ -20701,7 +20701,7 @@ export declare class GreeterParent__factory extends ContractFactory {
 	static createInterface(): GreeterParentInterface;
 	static connect(address: string, runner?: ContractRunner | null): GreeterParent;
 }
-export declare class IERC20Exp__factory {
+declare class IERC20Exp__factory {
 	static readonly abi: readonly [
 		{
 			readonly anonymous: false;
@@ -21010,7 +21010,7 @@ export declare class IERC20Exp__factory {
 	static createInterface(): IERC20ExpInterface;
 	static connect(address: string, runner?: ContractRunner | null): IERC20Exp;
 }
-export declare class IERC20Mintable__factory {
+declare class IERC20Mintable__factory {
 	static readonly abi: readonly [
 		{
 			readonly anonymous: false;
@@ -21371,7 +21371,7 @@ export declare class IERC20Mintable__factory {
 	static createInterface(): IERC20MintableInterface;
 	static connect(address: string, runner?: ContractRunner | null): IERC20Mintable;
 }
-export declare class IGateway__factory {
+declare class IGateway__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -21553,7 +21553,7 @@ export declare class IGateway__factory {
 	static createInterface(): IGatewayInterface;
 	static connect(address: string, runner?: ContractRunner | null): IGateway;
 }
-export declare class IInitializableProxy__factory {
+declare class IInitializableProxy__factory {
 	static readonly abi: readonly [
 		{
 			readonly inputs: readonly [
@@ -21647,7 +21647,7 @@ export declare class IInitializableProxy__factory {
 export type SigLibConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class SigLib__factory extends ContractFactory {
+declare class SigLib__factory extends ContractFactory {
 	constructor(...args: SigLibConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -21673,7 +21673,7 @@ export declare class SigLib__factory extends ContractFactory {
 export type WithSettlerConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class WithSettler__factory extends ContractFactory {
+declare class WithSettler__factory extends ContractFactory {
 	constructor(...args: WithSettlerConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -21878,7 +21878,7 @@ export declare class WithSettler__factory extends ContractFactory {
 export type InitializableProxyConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class InitializableProxy__factory extends ContractFactory {
+declare class InitializableProxy__factory extends ContractFactory {
 	constructor(...args: InitializableProxyConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -22051,7 +22051,7 @@ export declare class InitializableProxy__factory extends ContractFactory {
 export type ArowanaConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class Arowana__factory extends ContractFactory {
+declare class Arowana__factory extends ContractFactory {
 	constructor(...args: ArowanaConstructorParams);
 	getDeployTransaction(overrides?: NonPayableOverrides & {
 		from?: string;
@@ -22652,7 +22652,7 @@ export declare class Arowana__factory extends ContractFactory {
 export type ERC20MockConstructorParams = [
 	signer?: Signer
 ] | ConstructorParameters<typeof ContractFactory>;
-export declare class ERC20Mock__factory extends ContractFactory {
+declare class ERC20Mock__factory extends ContractFactory {
 	constructor(...args: ERC20MockConstructorParams);
 	getDeployTransaction(name_: string, symbol_: string, decimals_: BigNumberish, supply_: BigNumberish, overrides?: NonPayableOverrides & {
 		from?: string;
@@ -23436,11 +23436,12 @@ export declare class ArbHelper {
 	 */
 	parseParentToChildMessage(txReceipt: TransactionReceipt | null): Promise<RetryableMessage[]>;
 }
-export declare function getTokenInfo(token: unknown): Promise<{
+export declare function getTokenInfo(token: unknown, user?: SignerWithAddress | string): Promise<{
 	name: string;
 	symbol: string;
 	decimals: number;
-	totalSupply: string;
+	totalSupply: number;
+	balance: number;
 }>;
 export declare function getArwBalance(L1Token: unknown, L2Token: unknown, user?: SignerWithAddress | string): Promise<{
 	l1Supply: number;
@@ -24007,14 +24008,12 @@ declare namespace openzeppelin$1 {
 declare namespace contracts$3 {
 	export { arbitrum, interfaces$1 as interfaces, libraries$1 as libraries, lockSol, proxy$2 as proxy, tokens };
 }
+declare namespace contracts$4 {
+	export { AbsOutbox, AbsOutbox__factory, Address, Address__factory, ArbGateway, ArbGatewaySettle, ArbGatewaySettle__factory, ArbGateway__factory, ArbSys, ArbSys__factory, Arowana, Arowana__factory, ContextUpgradeable, ContextUpgradeable__factory, ECDSA, ECDSA__factory, EIP712, EIP712__factory, ERC1967Utils, ERC1967Utils__factory, ERC20, ERC20Burnable, ERC20Burnable__factory, ERC20Mock, ERC20Mock__factory, ERC20Permit, ERC20Permit__factory, ERC20__factory, Errors, Errors__factory, Greeter, GreeterChild, GreeterChild__factory, GreeterParent, GreeterParent__factory, Greeter__factory, IBeacon, IBeacon__factory, IBridge, IBridge__factory, IDelayedMessageProvider, IDelayedMessageProvider__factory, IERC1155Errors, IERC1155Errors__factory, IERC1363, IERC1363__factory, IERC165, IERC165__factory, IERC1967, IERC1967__factory, IERC20, IERC20Errors, IERC20Errors__factory, IERC20Exp, IERC20Exp__factory, IERC20Metadata, IERC20Metadata__factory, IERC20Mintable, IERC20Mintable__factory, IERC20Permit, IERC20Permit__factory, IERC20__factory, IERC5267, IERC5267__factory, IERC721Errors, IERC721Errors__factory, IFeeTokenPricer, IFeeTokenPricer__factory, IGasRefunder, IGasRefunder__factory, IGateway, IGateway__factory, IInbox, IInboxBase, IInboxBase__factory, IInbox__factory, IInitializableProxy, IInitializableProxy__factory, IOutbox, IOutbox__factory, IOwnable, IOwnable__factory, ISequencerInbox, ISequencerInbox__factory, Initializable, InitializableProxy, InitializableProxy__factory, Initializable__factory, Lock$1 as Lock, Lock__factory, NodeInterface, NodeInterface__factory, Nonces, Nonces__factory, Outbox, Outbox__factory, Ownable, OwnableUpgradeable, OwnableUpgradeable__factory, Ownable__factory, Proxy$1 as Proxy, Proxy__factory, SafeCast, SafeCast__factory, SafeERC20, SafeERC20__factory, ShortStrings, ShortStrings__factory, SigLib, SigLib__factory, Strings, Strings__factory, WithSettler, WithSettler__factory, arbitrum$3 as arbitrum, contracts$3 as contracts, factories, openzeppelin$1 as openzeppelin };
+}
 
 export {
-	Lock$1 as Lock,
-	Proxy$1 as Proxy,
-	arbitrum$3 as arbitrum,
-	contracts$3 as contracts,
-	factories,
-	openzeppelin$1 as openzeppelin,
+	contracts$4 as contracts,
 };
 
 export {};

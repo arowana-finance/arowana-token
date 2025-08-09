@@ -3,21 +3,26 @@ import { type SignerWithAddress } from 'ethers-opt';
 import { ArbGateway, ArbGatewaySettle, ERC20Mock } from '../typechain-types/index.js';
 import { type ArbHelper } from './arb.js';
 
-export async function getTokenInfo(token: unknown) {
+export async function getTokenInfo(token: unknown, user?: SignerWithAddress | string) {
     const Token = token as ERC20Mock;
+    const userAddress = (user as SignerWithAddress)?.address || (user as string | undefined);
 
-    const [name, symbol, decimals, totalSupply] = await Promise.all([
+    const [name, symbol, decimals, totalSupply, balance] = await Promise.all([
         Token.name(),
         Token.symbol(),
         Token.decimals(),
         Token.totalSupply(),
+        userAddress ? Token.balanceOf(userAddress) : 0n,
     ]);
+
+    const _decimals = Number(decimals);
 
     return {
         name,
         symbol,
-        decimals: Number(decimals),
-        totalSupply: formatUnits(totalSupply, decimals),
+        decimals: _decimals,
+        totalSupply: Number(formatUnits(totalSupply, _decimals)),
+        balance: Number(formatUnits(balance, _decimals)),
     };
 }
 

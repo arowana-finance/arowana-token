@@ -6,15 +6,14 @@ import { IBridge, IOutbox } from '@arbitrum/nitro-contracts/src/bridge/Outbox.so
 import { ArbSys } from '@arbitrum/nitro-contracts/src/precompiles/ArbSys.sol';
 import { AddressAliasHelper } from '@arbitrum/nitro-contracts/src/libraries/AddressAliasHelper.sol';
 import { SafeERC20 } from '@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol';
-import { Initializable } from '@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol';
-import { OwnableUpgradeable } from '@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol';
 import { BytesSlice } from '../libraries/BytesSlice.sol';
+import { Ownable } from '../libraries/Ownable.sol';
 import { IERC20Exp, IERC20Mintable } from '../interfaces/IERC20.sol';
 import { IGateway } from '../interfaces/IGateway.sol';
 import { SigLib } from '../libraries/SigLib.sol';
 
 /// @dev Arbitrum ERC20 gateway for L1 and L2
-contract ArbGateway is Initializable, OwnableUpgradeable {
+contract ArbGateway is Ownable {
     using SigLib for bytes;
     using SafeERC20 for IERC20Exp;
     using SafeERC20 for IERC20Mintable;
@@ -78,29 +77,13 @@ contract ArbGateway is Initializable, OwnableUpgradeable {
         inbox = _inbox;
         otherGateway = _otherGateway;
 
-        emit InitializedGateway(address(arbsys), address(_inbox), _otherGateway);
-
         for (uint i; i < _otherTokens.length; ++i) {
             OtherTokens memory otherToken = _otherTokens[i];
 
-            otherTokens[otherToken.home] = otherToken.other;
-            emit SetOtherToken(otherToken.home, otherToken.other);
+            setOtherToken(otherToken.home, otherToken.other);
         }
-    }
 
-    function checkArb(address msgSender) public view returns (bool) {
-        bool isArbitrum = address(inbox) == address(0);
-
-        if (isArbitrum) {
-            // To check that message came from the parent chain,
-            // we check that the sender is the parent chain contract's alias.
-            return msgSender == AddressAliasHelper.applyL1ToL2Alias(otherGateway);
-        } else {
-            // this prevents reentrancies on Child-to-Parent transactions
-            IBridge bridge = inbox.bridge();
-            return
-                msgSender == address(bridge) && IOutbox(bridge.activeOutbox()).l2ToL1Sender() == otherGateway;
-        }
+        emit InitializedGateway(address(arbsys), address(_inbox), _otherGateway);
     }
 
     function setBurnToken(address homeToken) external virtual onlyOwner {
@@ -118,7 +101,7 @@ contract ArbGateway is Initializable, OwnableUpgradeable {
         emit SetToBurn(homeToken, shouldBurnToken[homeToken]);
     }
 
-    function setOtherToken(address home, address other) external virtual onlyOwner {
+    function setOtherToken(address home, address other) public virtual onlyOwner {
         otherTokens[home] = other;
         emit SetOtherToken(home, other);
     }
@@ -253,5 +236,20 @@ contract ArbGateway is Initializable, OwnableUpgradeable {
     function bridgeMsg(uint256 _nonce, string memory _msg) external {
         require(msg.sender == address(this), 'ONLY_SELF');
         emit BridgedMessage(_nonce, _msg);
+    }
+
+    function checkArb(address msgSender) public view returns (bool) {
+        bool isArbitrum = address(inbox) == address(0);
+
+        if (isArbitrum) {
+            // To check that message came from the parent chain,
+            // we check that the sender is the parent chain contract's alias.
+            return msgSender == AddressAliasHelper.applyL1ToL2Alias(otherGateway);
+        } else {
+            // this prevents reentrancies on Child-to-Parent transactions
+            IBridge bridge = inbox.bridge();
+            return
+                msgSender == address(bridge) && IOutbox(bridge.activeOutbox()).l2ToL1Sender() == otherGateway;
+        }
     }
 }

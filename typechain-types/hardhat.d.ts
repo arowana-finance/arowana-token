@@ -38,6 +38,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.SigLib__factory>;
     getContractFactory(
+      name: "Ownable",
+      signerOrOptions?: ethers.Signer | FactoryOptions,
+    ): Promise<Contracts.Ownable__factory>;
+    getContractFactory(
       name: "IInitializableProxy",
       signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.IInitializableProxy__factory>;
@@ -273,6 +277,11 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer,
     ): Promise<Contracts.SigLib>;
     getContractAt(
+      name: "Ownable",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer,
+    ): Promise<Contracts.Ownable>;
+    getContractAt(
       name: "IInitializableProxy",
       address: string | ethers.Addressable,
       signer?: ethers.Signer,
@@ -553,6 +562,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions,
     ): Promise<Contracts.SigLib>;
     deployContract(
+      name: "Ownable",
+      signerOrOptions?: ethers.Signer | DeployContractOptions,
+    ): Promise<Contracts.Ownable>;
+    deployContract(
       name: "IInitializableProxy",
       signerOrOptions?: ethers.Signer | DeployContractOptions,
     ): Promise<Contracts.IInitializableProxy>;
@@ -787,6 +800,11 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions,
     ): Promise<Contracts.SigLib>;
+    deployContract(
+      name: "Ownable",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions,
+    ): Promise<Contracts.Ownable>;
     deployContract(
       name: "IInitializableProxy",
       args: any[],

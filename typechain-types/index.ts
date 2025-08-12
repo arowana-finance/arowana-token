@@ -20,6 +20,8 @@ export type { WithSettler } from "./contracts/libraries/WithSettler.sol/WithSett
 export { WithSettler__factory } from "./factories/contracts/libraries/WithSettler.sol/WithSettler__factory.js";
 export type { SigLib } from "./contracts/libraries/SigLib.sol/SigLib.js";
 export { SigLib__factory } from "./factories/contracts/libraries/SigLib.sol/SigLib__factory.js";
+export type { Ownable } from "./contracts/libraries/Ownable.sol/Ownable.js";
+export { Ownable__factory } from "./factories/contracts/libraries/Ownable.sol/Ownable__factory.js";
 export type { IInitializableProxy } from "./contracts/interfaces/IInitializableProxy.sol/IInitializableProxy.js";
 export { IInitializableProxy__factory } from "./factories/contracts/interfaces/IInitializableProxy.sol/IInitializableProxy__factory.js";
 export type { IGateway } from "./contracts/interfaces/IGateway.sol/IGateway.js";
@@ -94,8 +96,6 @@ export type { IERC20Errors } from "./@openzeppelin/contracts/interfaces/draft-IE
 export { IERC20Errors__factory } from "./factories/@openzeppelin/contracts/interfaces/draft-IERC6093.sol/IERC20Errors__factory.js";
 export type { IERC1155Errors } from "./@openzeppelin/contracts/interfaces/draft-IERC6093.sol/IERC1155Errors.js";
 export { IERC1155Errors__factory } from "./factories/@openzeppelin/contracts/interfaces/draft-IERC6093.sol/IERC1155Errors__factory.js";
-export type { Ownable } from "./@openzeppelin/contracts/access/Ownable.sol/Ownable.js";
-export { Ownable__factory } from "./factories/@openzeppelin/contracts/access/Ownable.sol/Ownable__factory.js";
 export type { ArbSys } from "./@arbitrum/nitro-contracts/src/precompiles/ArbSys.sol/ArbSys.js";
 export { ArbSys__factory } from "./factories/@arbitrum/nitro-contracts/src/precompiles/ArbSys.sol/ArbSys__factory.js";
 export type { NodeInterface } from "./@arbitrum/nitro-contracts/src/node-interface/NodeInterface.sol/NodeInterface.js";

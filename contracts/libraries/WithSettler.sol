@@ -18,7 +18,7 @@ contract WithSettler is Ownable {
         _;
     }
 
-    function _initialize(address _initOwner) internal {
+    function _initializeSettler(address _initOwner) internal {
         if (_initOwner == address(0)) {
             _initOwner = msg.sender;
         }
@@ -27,8 +27,8 @@ contract WithSettler is Ownable {
         emit AddSettler(_initOwner);
     }
 
-    function initialize(address _initOwner) public virtual initializer {
-        _initialize(_initOwner);
+    function initializeSettler(address _initOwner) public virtual initializer {
+        _initializeSettler(_initOwner);
     }
 
     function settlers() external view returns (address[] memory) {

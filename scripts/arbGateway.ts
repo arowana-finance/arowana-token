@@ -108,6 +108,7 @@ async function deployGateways(L1Token: ERC20Mock, L2Token: ERC20Mock) {
     await logTx(
         'L1: Initialize Gateway',
         L1GatewayProxy.initializeProxy(
+            'ArbGateway',
             parentSigner.address,
             L1GatewayImpl.target,
             (
@@ -125,6 +126,7 @@ async function deployGateways(L1Token: ERC20Mock, L2Token: ERC20Mock) {
     await logTx(
         'L2: Initialize Gateway',
         L2GatewayProxy.initializeProxy(
+            'ArbGateway',
             childSigner.address,
             L2GatewayImpl.target,
             (

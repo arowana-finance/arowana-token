@@ -30,6 +30,8 @@ export type { IERC20Mintable } from "./contracts/interfaces/IERC20.sol/IERC20Min
 export { IERC20Mintable__factory } from "./factories/contracts/interfaces/IERC20.sol/IERC20Mintable__factory.js";
 export type { IERC20Exp } from "./contracts/interfaces/IERC20.sol/IERC20Exp.js";
 export { IERC20Exp__factory } from "./factories/contracts/interfaces/IERC20.sol/IERC20Exp__factory.js";
+export type { ARWSupply } from "./contracts/ARWSupply.sol/ARWSupply.js";
+export { ARWSupply__factory } from "./factories/contracts/ARWSupply.sol/ARWSupply__factory.js";
 export type { GreeterParent } from "./contracts/arbitrum/GreeterParent.sol/GreeterParent.js";
 export { GreeterParent__factory } from "./factories/contracts/arbitrum/GreeterParent.sol/GreeterParent__factory.js";
 export type { GreeterChild } from "./contracts/arbitrum/GreeterChild.sol/GreeterChild.js";

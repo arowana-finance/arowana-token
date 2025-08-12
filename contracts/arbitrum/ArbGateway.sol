@@ -72,8 +72,6 @@ contract ArbGateway is Ownable {
         address _otherGateway,
         OtherTokens[] memory _otherTokens
     ) public virtual initializer {
-        __Ownable_init(_owner);
-
         inbox = _inbox;
         otherGateway = _otherGateway;
 
@@ -82,6 +80,8 @@ contract ArbGateway is Ownable {
 
             setOtherToken(otherToken.home, otherToken.other);
         }
+
+        __Ownable_init(_owner);
 
         emit InitializedGateway(address(arbsys), address(_inbox), _otherGateway);
     }

@@ -58,6 +58,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.IERC20Exp__factory>;
     getContractFactory(
+      name: "ARWSupply",
+      signerOrOptions?: ethers.Signer | FactoryOptions,
+    ): Promise<Contracts.ARWSupply__factory>;
+    getContractFactory(
       name: "GreeterParent",
       signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.GreeterParent__factory>;
@@ -302,6 +306,11 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer,
     ): Promise<Contracts.IERC20Exp>;
     getContractAt(
+      name: "ARWSupply",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer,
+    ): Promise<Contracts.ARWSupply>;
+    getContractAt(
       name: "GreeterParent",
       address: string | ethers.Addressable,
       signer?: ethers.Signer,
@@ -582,6 +591,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions,
     ): Promise<Contracts.IERC20Exp>;
     deployContract(
+      name: "ARWSupply",
+      signerOrOptions?: ethers.Signer | DeployContractOptions,
+    ): Promise<Contracts.ARWSupply>;
+    deployContract(
       name: "GreeterParent",
       signerOrOptions?: ethers.Signer | DeployContractOptions,
     ): Promise<Contracts.GreeterParent>;
@@ -825,6 +838,11 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions,
     ): Promise<Contracts.IERC20Exp>;
+    deployContract(
+      name: "ARWSupply",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions,
+    ): Promise<Contracts.ARWSupply>;
     deployContract(
       name: "GreeterParent",
       args: any[],
